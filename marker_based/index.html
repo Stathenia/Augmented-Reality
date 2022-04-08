@@ -1,29 +1,95 @@
 <!DOCTYPE html>
 <html>
-    <script src="https://aframe.io/releases/1.0.0/aframe.min.js"></script>
-    <!-- we import arjs version without NFT but with marker + location based support -->
-    <!--<script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar.js"></script>-->
-    <script src="build/aframe-ar.js"></script>
-    
-    <!-- particles system component -->
-    <script src="https://unpkg.com/aframe-particle-system-component@1.0.x/dist/aframe-particle-system-component.min.js"></script>
-    
-    <!-- speech command component -->
-    <script src="//cdnjs.cloudflare.com/ajax/libs/annyang/2.5.0/annyang.min.js"></script>
-    <script src="build/aframe-speech-command-component.js"></script> 
-    
-
-    <body style="margin : 0px; overflow: hidden;">
-        <a-scene
-    vr-mode-ui="enabled: false;"
-    renderer="logarithmicDepthBuffer: true;"
-    embedded
-    arjs="trackingMethod: best; sourceType: webcam;debugUIEnabled: false;"
-  >
-        <a-marker preset="hiro">
-            <a-entity id="box" geometry="primitive: box; width: 0.2; depth: 0.2; height: 0.2" position="0 0 0" material="color: #4CC3D9"></a-entity>
-        </a-marker>
-        <a-entity camera></a-entity>
-        </a-scene>
-    </body>
-</html>
+<head>
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge'>
+<title>GeoAR.js demo</title>
+<script src="https://aframe.io/releases/0.9.2/aframe.min.js"></script>
+<!-- <script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar-nft.js"></script>-->
+<script src='build/aframe-ar-nft.js'></script>
+</head>
+<body style='margin: 0; overflow: hidden;'>
+<a-scene
+vr-mode-ui="enabled: false"
+embedded
+arjs='sourceType: webcam; debugUIEnabled: false;'>
+<a-box
+material="color: red;"
+scale="20 20 20"
+gps-entity-place="latitude: 44.506477; longitude: 11.301524;">
+</a-box>
+<a-camera
+rotation-reader
+gps-camera="simulateLatitude: 44.504348; simulateLongitude: 11.301027; minDistance: 1; maxDistance: 700;"
+>
+</a-camera>
+</a-scene>
+//kilindros, sphera kai koyti
+<body>
+<a-scene>
+<a-box position="-1 0.5 -3" rotation="0 45 0" color="#4CC3D9"></a-box>
+<a-sphere position="0 1.25 -5" radius="1.25" color="#EF2D5E"></a-sphere>
+<a-cylinder position="1 0.75 -3" radius="0.5" height="1.5" color="#FFC65D"></a-cylinder>
+<a-plane position="0 0 -4" rotation="-90 0 0" width="4" height="4" color="#7BC8A4"></a-plane>
+<a-sky color="#ECECEC"></a-sky>
+</a-scene>
+</body>
+<a-scene>
+<!-- Particle system uses 'default' preset, setting custom colors. -->
+<a-entity position="0 2.25 -15" particle-system="color: #EF0000,#44CC00"></a-entity>
+<a-sphere position="0 1.25 -1" radius="1.25" color="#EF2D5E"></a-sphere>
+<a-box position="-1 0.5 1" rotation="0 45 0" width="1" height="1" depth="1" color="#4CC3D9"></a-box>
+<a-cylinder position="1 0.75 1" radius="0.5" height="1.5" color="#FFC65D"></a-cylinder>
+<a-plane rotation="-90 0 0" width="4" height="4" color="#7BC8A4"></a-plane>
+<a-sky color="#000000"></a-sky>
+</a-scene>
+//microfono
+//sindesi
+var recognition = new SpeechRecognition();
+var speechRecognitionList = new SpeechGrammarList();
+//foni me java
+var SpeechRecognition = window.SpeechRecognition || webkitSpeechRecognition;
+var SpeechGrammarList = window.SpeechGrammarList || webkitSpeechGrammarList;
+var SpeechRecognitionEvent = window.SpeechRecognitionEvent || webkitSpeechRecognitionEvent;
+//SpeechRecognition.stop()
+var grammar = '#JSGF V1.0; grammar colors; public <color> = aqua | azure | beige | bisque | black | blue | brown | chocolate | coral | crimson | cyan | fuchsia | ghostwhite | gold | goldenrod | gray | green | indigo | ivory | khaki | lavender | lime | linen | magenta | maroon | moccasin | navy | olive | orange | orchid | peru | pink | plum | purple | red | salmon | sienna | silver | snow | tan | teal | thistle | tomato | turquoise | violet | white | yellow ;'
+var recognition = new SpeechRecognition();
+var speechRecognitionList = new SpeechGrammarList();
+speechRecognitionList.addFromString(grammar, 1);
+recognition.grammars = speechRecognitionList;
+var diagnostic = document.querySelector('.output');
+var bg = document.querySelector('html');
+document.body.onclick = function() {
+recognition.start();
+console.log('Ready to receive a color command.');
+}
+abortBtn.onclick = function() {
+recognition.abort();
+console.log('Speech recognition aborted.');
+}
+recognition.onspeechend = function() {
+recognition.stop();
+console.log('Speech recognition has stopped.');
+}
+//Έναρξηαναγνώρισης ομιλίας
+var diagnostic = document.querySelector('.output');
+var bg = document.querySelector('html');
+var hints = document.querySelector('.hints');
+var colorHTML= '';
+colors.forEach(function(v, i, a){
+console.log(v, i);
+colorHTML += '<span style="background-color:' + v + ';"> ' + v + ' </span>';
+});
+hints.innerHTML = 'Tap/click then say a color to change the background color of the app. Try ' + colorHTML + '.';
+document.body.onclick = function() {
+recognition.start();
+console.log('Ready to receive a color command.'
+}
+//ixos
+<script src="//cdnjs.cloudflare.com/ajax/libs/annyang/2.5.0/annyang.min.js"></script>
+<script src="build/aframe-speech-command-component.js"></script>
+//xioni
+<a-entity position="0 2.25 -15" particle-system="preset: snow"></a-entity>
+//rain
+<a-entity position="0 2.25 -15" particle-system="preset: rain"></a-entity>
+</body>
