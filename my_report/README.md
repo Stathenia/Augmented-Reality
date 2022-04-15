@@ -25,7 +25,8 @@
 
 
 # Sources
-Πηγές 1ου παραδοτέου
+Πηγές 1ου παραδοτέου: 
+
 https://github.com/IdeaSpaceVR/aframe-particle-system-component#readme
 https://github.com/mdn/web-speech-api/blob/master/speech-color-changer/script.js
 https://developer.mozilla.org/en-US/docs/Web/API/SpeechRecognition/SpeechRecognition
