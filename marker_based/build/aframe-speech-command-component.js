@@ -128,6 +128,7 @@
 	            var speechCommandSystem = document.querySelector('a-scene').systems['speech-command'];
 	            var commands = {};
 	            var commandsMap = {};
+			
 	            for (var i = 0; i < speechCommandSystem.entities.length; i++) {
 	                var speechCommand = speechCommandSystem.entities[i];
 	                commandsMap[speechCommand.data.command] = speechCommand;
