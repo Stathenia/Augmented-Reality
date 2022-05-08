@@ -33,10 +33,21 @@
 # Sources
 Πηγές 1ου παραδοτέου: 
 
-https://github.com/IdeaSpaceVR/aframe-particle-system-component#readme
-https://github.com/mdn/web-speech-api/blob/master/speech-color-changer/script.js
-https://developer.mozilla.org/en-US/docs/Web/API/SpeechRecognition/SpeechRecognition
-https://github.com/IdeaSpaceVR/aframe-particle-system-component#readme
-
+<ol>
+<li>https://github.com/IdeaSpaceVR/aframe-particle-system-component#readme
+<li>https://github.com/mdn/web-speech-api/blob/master/speech-color-changer/script.js
+<li>https://developer.mozilla.org/en-US/docs/Web/API/SpeechRecognition/SpeechRecognition
+<li>https://github.com/IdeaSpaceVR/aframe-particle-system-component#readme
+</ol>
 
 Πηγές 2ου παραδοτέου:
+<ol>
+<li>https://medium.com/arjs/ar-js-supports-tango-on-a-frame-too-2c098de4df34 </li>
+<li>https://stackoverflow.com/questions/61239107/how-to-get-marker-position-x-y-ar-js </li>
+<li>https://medium.com/chialab-open-source/build-your-location-based-augmented-reality-web-app-c2442e716564</li>
+<li>https://aframe.io/blog/arjs/#customize-your-marker </li>
+<li>https://www.youtube.com/watch?v=dIEZwmjuaUA&list=PL2oSKUSmuoTECUCvHDvifRhztkOYduQsq&index=12</li>
+<li>https://www.youtube.com/watch?v=Qi3h18wJJiI</li>
+</ol>
+
+
