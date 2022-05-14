@@ -12,6 +12,28 @@
 <script src="//cdnjs.cloudflare.com/ajax/libs/annyang/2.5.0/annyang.min.js"></script>
 <script src="build/aframe-speech-command-component.js"></script>
 
+ var maker1Pos, maker2Pos, makerDistanst;
+    
+    in function(){
+    this.box1=documentquerSelector('#box1');
+    this.box2=documentquerSelector('#box2');
+    this.box3=documentquerSelector('#box3');
+    this.text=documentquerSelector('#text');
+    this.maker1=documentquerSelector('#maker1');
+    this.maker2=documentquerSelector('#maker2');
+    }
+    
+    if (makerDistance<2){
+        this.box1setAttribute('visable',false);
+        this.box2setAttribute('visable',false) ;               
+        this.box3setAttribute('visable',true);                           
+       }
+                          
+    else if (makerDistance>2){
+        this.box1setAttribute('visable',true);
+        this.box2setAttribute('visable',true);              
+        this.box3setAttribute('visable',false);                              
+       }
 
 <body style="margin : 0px; overflow: hidden;">
     <a-scene vr-mode-ui="enabled: false;"
